@@ -53,7 +53,7 @@ body{font-family:'Poppins',sans-serif;background:#fdfaf3;color:#333;overflow-y:a
     <h2>💍 Reception</h2>
     <p><b>Baithul Baheerath</b><br>Pullooppi<br>Come & Bless The Couple</p>
     <br>
-    <a class="btn" href="https://wa.me/919999999999?text=Assalamu%20Alaikum%20Shahis!%20Wedding%20Invitation%20kandu">Confirm on WhatsApp</a>
+    <a class="btn" href="https://wa.me/+971509056838?text=Assalamu%20Alaikum%20Shahis!%20Wedding%20Invitation%20kandu">Confirm on WhatsApp</a>
   </div>
 </div>
 
@@ -72,3 +72,21 @@ setInterval(()=>{
 </script>
 </body>
 </html>
+<audio id="mySong" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playSong()" style="position:fixed;bottom:20px;right:20px;background:#a67c3d;color:white;border:none;padding:12px 18px;border-radius:50px;z-index:9999;font-size:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);cursor:pointer;">🎵 Play Song</button>
+
+<script>
+function playSong(){
+  var song = document.getElementById("mySong");
+  if(song.paused){
+    song.play();
+    event.target.innerHTML = "⏸️ Pause Song";
+  } else {
+    song.pause();
+    event.target.innerHTML = "🎵 Play Song";
+  }
+}
+</script>
