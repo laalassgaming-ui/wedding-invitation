@@ -141,10 +141,12 @@ setInterval(function(){
   document.getElementById("m").innerHTML=Math.floor((diff%(1000*60*60))/(1000*60));
   document.getElementById("s").innerHTML=Math.floor((diff%(1000*60))/1000);
 },1000);
-function playSong(){
-  var song=document.getElementById("mySong");
-  var btn=document.getElementById("songBtn");
-  if(song.paused){song.play();btn.innerHTML="⏸️ Pause Song";}else{song.pause();btn.innerHTML="🎵 Play Song";}
+function openInvite(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('main').style.display='block';
+  var s=document.getElementById('mySong');
+  s.volume=1; s.muted=false;
+  s.play().then(()=>{document.getElementById('songBtn').innerHTML='⏸️ Pause Song';}).catch(()=>{document.getElementById('songBtn').innerHTML='🎵 Play Song - Tap Here';});
 }
 </script>
 </body>
