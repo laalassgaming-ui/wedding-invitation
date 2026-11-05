@@ -131,9 +131,8 @@ h2{font-family:'Great Vibes',cursive;font-size:46px;color:#e8d5a3;margin-bottom:
 function startSong(){
   var s=document.getElementById('mySong');
   var btn=document.getElementById('songBtn');
-  s.volume=1; s.muted=false;
+  s.volume=10; s.muted=false;
   var p=s.play();
-  if(p){p.then(()=>{btn.innerHTML='⏸️ Pause Song';}).catch(()=>{btn.innerHTML='🎵 Tap To Play Song';});}
 }
 function openInvite(){
   document.getElementById('cover').style.display='none';
