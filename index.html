@@ -125,22 +125,17 @@ h2{font-family:'Great Vibes',cursive;font-size:46px;color:#e8d5a3;margin-bottom:
 </div>
 
 <audio id="mySong" loop preload="auto" playsinline><source src="song.mp3" type="audio/mpeg"></audio>
-<button class="music" id="songBtn" onclick="toggleSong()">🎵 Play Nasheed - Wedding | Muhammad Al Muqit</button>
+<button class="music" id="songBtn" onclick="playSong()">🎵 Play Nasheed - Wedding | Muhammad Al Muqit</button>
 
 <script>
-function startSong(){
-  var s=document.getElementById('mySong');
-  var btn=document.getElementById('songBtn');
-  s.volume=10; s.muted=false;
-  var p=s.play();
-}
 function openInvite(){
   document.getElementById('cover').style.display='none';
   document.getElementById('main').style.display='block';
-  startSong();
+  var s=document.getElementById('mySong');
+  s.volume=1; s.muted=false;
+  s.play().then(()=>{document.getElementById('songBtn').innerHTML='⏸️ Pause Nasheed';}).catch(()=>{document.getElementById('songBtn').innerHTML='🎵 Tap To Play Nasheed';});
   window.scrollTo(0,0);
 }
-document.addEventListener('touchstart', function(){ var s=document.getElementById('mySong'); if(s.paused && document.getElementById('main').style.display=='block'){ startSong(); } }, {once:false});
 var target=new Date("Nov 22, 2026 11:00:00").getTime();
 setInterval(function(){
   var diff=target-new Date().getTime();
@@ -152,8 +147,10 @@ setInterval(function(){
 function playSong(){
   var song=document.getElementById("mySong");
   var btn=document.getElementById("songBtn");
-  if(song.paused){song.play();btn.innerHTML="⏸️ Pause Song";}else{song.pause();btn.innerHTML="🎵 Play Song";}
+  if(song.paused){song.play();btn.innerHTML="⏸️ Pause Nasheed";}else{song.pause();btn.innerHTML="🎵 Play Nasheed - Wedding | Muhammad Al Muqit";}
 }
 </script>
+</body>
+</html>
 </body>
 </html>
