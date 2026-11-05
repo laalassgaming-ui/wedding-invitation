@@ -124,7 +124,7 @@ h2{font-family:'Great Vibes',cursive;font-size:46px;color:#e8d5a3;margin-bottom:
   </div>
 </div>
 
-<audio id="mySong" loop preload="auto" playsinline autoplay muted>
+<audio id="mySong" loop preload="auto" playsinline autoplay>
 <source src="https://archive.org/download/nasheed-no-music/Arabic%20Nasheed%20Wedding%20Nasheed%20%28no%20music%29%20By%20Mohammed%20Al%20Muqit.ogg" type="audio/ogg">
 <source src="song.mp3" type="audio/mpeg">
 </audio>
@@ -157,7 +157,7 @@ function playSong(){
 window.addEventListener('load', function(){
   var s = document.getElementById('mySong');
   s.muted = false;
-  s.volume = 1;
+  s.volume = 10;
   s.play().catch(function(){});
 });
 // First touch il thanne play aakum
