@@ -149,13 +149,23 @@ function playSong(){
   var btn=document.getElementById("songBtn");
   if(song.paused){song.play();btn.innerHTML="⏸️ Pause Nasheed";}else{song.pause();btn.innerHTML="🎵 Play Nasheed - Wedding | Muhammad Al Muqit";}
 }
+ function openInvitation(){
+  var song = document.getElementById("mySong");
+  if(song){ song.muted = false; song.volume = 1; song.play().catch(function(){}); }
+  var cover = document.getElementById("cover") || document.getElementById("envelope") || document.getElementById("intro") || document.querySelector(".cover") || document.querySelector(".envelope");
+  if(cover){ cover.style.display = "none"; }
+  document.body.style.overflow = "auto";
+  var main = document.getElementById("main") || document.getElementById("invitation") || document.querySelector("main");
+  if(main){ main.style.display = "block"; main.scrollIntoView(); }
+  window.scrollTo(0,0);
+}
 </script>
   <script>
 // Auto-play try - site open aavumbo
 window.addEventListener('load', function(){
   var s = document.getElementById('mySong');
   s.muted = false;
-  s.volume = 10;
+  s.volume = 1;
   s.play().catch(function(){});
 });
 // First touch il thanne play aakum
@@ -172,6 +182,3 @@ document.addEventListener('click', startMusicOnce);
 document.addEventListener('scroll', startMusicOnce);
 </script>
 </body>
-</html>
-</body>
-</html>
