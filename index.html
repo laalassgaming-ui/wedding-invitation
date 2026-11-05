@@ -4,28 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shahis ❤ Sahala | Wedding Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fdf6ee;color:#4a3b2a;text-align:center}
-.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;background:linear-gradient(#fff8ec,#f9e8d2)}
-.cover h3{letter-spacing:4px;font-weight:300;font-size:14px}
-.names{font-family:'Great Vibes',cursive;font-size:68px;color:#a67c3d;line-height:1.1;margin:15px 0}
-.date{font-size:17px;letter-spacing:2px;margin:10px 0;font-weight:600}
-.btn{background:#a67c3d;color:#fff;border:none;padding:14px 30px;border-radius:30px;font-size:16px;cursor:pointer;margin-top:20px}
-section{padding:50px 20px;max-width:650px;margin:auto}
-h2{font-family:'Great Vibes',cursive;font-size:42px;color:#a67c3d;margin-bottom:15px}
-.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.07);margin:20px 0;line-height:1.8}
-.count{display:flex;justify-content:center;gap:12px;margin-top:20px}
-.count div{background:#fff;padding:15px;border-radius:15px;min-width:70px;box-shadow:0 5px 15px rgba(0,0,0,0.06)}
-.count b{font-size:24px;display:block;color:#a67c3d}
-.footer{padding:30px;font-size:13px;opacity:.7}
-a{color:#a67c3d;text-decoration:none;font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#fdfaf3;color:#333;overflow-y:auto !important;overflow-x:hidden}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;background:linear-gradient(#fdfaf3,#f5ead1)}
+.small{letter-spacing:5px;font-size:13px;color:#8a7a5a}
+.names{font-family:'Great Vibes',cursive;font-size:80px;color:#a8862d;line-height:1.1;margin:15px 0}
+.date{font-size:20px;letter-spacing:2px;margin-top:10px}
+.btn{display:inline-block;margin-top:25px;background:#a8862d;color:#fff;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600}
+.card{max-width:650px;margin:30px auto;background:#fff;padding:30px 20px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);text-align:center}
+.card h2{color:#a8862d;font-size:22px;margin-bottom:10px}
+.card p{line-height:1.8;color:#555}
+.count{display:flex;justify-content:center;gap:12px;margin-top:15px}
+.count div{background:#fdfaf3;border:1px solid #e8d9b0;padding:12px;border-radius:12px;min-width:70px}
+.count b{font-size:24px;color:#a8862d;display:block}
+.footer{text-align:center;padding:30px;color:#888;font-size:13px}
+@media(max-width:600px){.names{font-size:62px}}
 </style>
 </head>
 <body>
 
-<div class="cover">
-  <h3>THE WEDDING OF</h3>
+<div class="hero">
+  <div class="small">THE WEDDING OF</div>
   <div class="names">Shahis<br>&<br>Sahala</div>
-  <div class="date"
+  <div class="date">22 • NOVEMBER • 2026 | SUNDAY</div>
+  <a class="btn" href="#details">View Invitation ↓</a>
+</div>
+
+<div id="details" style="padding:10px 15px 40px">
+  <div class="card">
+    <h2>⏳ Countdown</h2>
+    <div class="count">
+      <div><b id="d">0</b>Days</div>
+      <div><b id="h">0</b>Hours</div>
+      <div><b id="m">0</b>Minutes</div>
+      <div><b id="s">0</b>Seconds</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🕌 Nikkah</h2>
+    <p><b>Pullooppi Juma Masjid</b><br>22 November 2026, Sunday<br>Time: 11:00 AM</p>
+  </div>
+
+  <div class="card">
+    <h2>💍 Reception</h2>
+    <p><b>Baithul Baheerath</b><br>Pullooppi<br>Come & Bless The Couple</p>
+    <br>
+    <a class="btn" href="https://wa.me/919999999999?text=Assalamu%20Alaikum%20Shahis!%20Wedding%20Invitation%20kandu">Confirm on WhatsApp</a>
+  </div>
+</div>
+
+<div class="footer">Shahis ❤ Sahala • 22.11.2026<br>Made with Love</div>
+
+<script>
+const target = new Date("2026-11-22T11:00:00").getTime();
+setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = target - now;
+  document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById("h").innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("m").innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById("s").innerText = Math.floor((diff%(1000*60))/1000);
+},1000);
+</script>
+</body>
+</html>
