@@ -153,6 +153,7 @@
  var s=document.getElementById('song');
  if(s){s.play().catch(function(){});}
  window.scrollTo(0,0);
+ document.body.style.overflow='auto';
  }
  function toggleSong(){
  var s=document.getElementById('song');
@@ -168,12 +169,6 @@
  document.getElementById('m').innerHTML=Math.floor((diff%(1000*60*60))/(1000*60));
  document.getElementById('s').innerHTML=Math.floor((diff%(1000*60))/1000);
  },1000);
- window.addEventListener('load', function(){
- setTimeout(function(){
- document.getElementById('cover').style.display='none';
- document.getElementById('main').style.display='block';
- }, 2500);
- });
  </script>
  </body>
  </html>
